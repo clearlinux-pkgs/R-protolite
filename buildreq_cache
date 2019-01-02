@@ -1,0 +1,6 @@
+1.8
+R-RProtoBuf
+R-Rcpp
+R-jsonlite
+R-rlang
+pkgconfig(protobuf)
