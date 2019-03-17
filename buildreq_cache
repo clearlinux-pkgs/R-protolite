@@ -1,6 +1,9 @@
 1.8
 R-RProtoBuf
 R-Rcpp
+R-assertthat
+R-cli
 R-jsonlite
 R-rlang
+R-withr
 pkgconfig(protobuf)

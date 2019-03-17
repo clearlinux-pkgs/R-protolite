@@ -4,21 +4,23 @@
 #
 Name     : R-protolite
 Version  : 1.8
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/protolite_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_1.8.tar.gz
 Summary  : Fast and Simple Object Serialization to Protocol Buffers
 Group    : Development/Tools
 License  : MIT
 Requires: R-protolite-lib = %{version}-%{release}
-Requires: R-RProtoBuf
-Requires: R-Rcpp
-Requires: R-jsonlite
-Requires: R-rlang
+Requires: R-assertthat
+Requires: R-cli
+Requires: R-withr
 BuildRequires : R-RProtoBuf
 BuildRequires : R-Rcpp
+BuildRequires : R-assertthat
+BuildRequires : R-cli
 BuildRequires : R-jsonlite
 BuildRequires : R-rlang
+BuildRequires : R-withr
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(protobuf)
 
@@ -48,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1546451331
+export SOURCE_DATE_EPOCH=1552838516
 
 %install
-export SOURCE_DATE_EPOCH=1546451331
+export SOURCE_DATE_EPOCH=1552838516
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -87,8 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library protolite|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  protolite || :
 
 
 %files
@@ -114,10 +115,12 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/protolite/help/protolite.rdx
 /usr/lib64/R/library/protolite/html/00Index.html
 /usr/lib64/R/library/protolite/html/R.css
-/usr/lib64/R/library/protolite/libs/symbols.rds
+/usr/lib64/R/library/protolite/tests/testthat.R
+/usr/lib64/R/library/protolite/tests/testthat/test-geobuf.R
+/usr/lib64/R/library/protolite/tests/testthat/test-serialize.R
+/usr/lib64/R/library/protolite/tests/testthat/test.json
+/usr/lib64/R/library/protolite/tests/testthat/test.pb
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/protolite/libs/protolite.so
-/usr/lib64/R/library/protolite/libs/protolite.so.avx2
-/usr/lib64/R/library/protolite/libs/protolite.so.avx512
