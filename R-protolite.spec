@@ -4,16 +4,13 @@
 #
 Name     : R-protolite
 Version  : 1.8
-Release  : 4
+Release  : 5
 URL      : https://cran.r-project.org/src/contrib/protolite_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_1.8.tar.gz
 Summary  : Fast and Simple Object Serialization to Protocol Buffers
 Group    : Development/Tools
 License  : MIT
 Requires: R-protolite-lib = %{version}-%{release}
-Requires: R-assertthat
-Requires: R-cli
-Requires: R-withr
 BuildRequires : R-RProtoBuf
 BuildRequires : R-Rcpp
 BuildRequires : R-assertthat
@@ -50,10 +47,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552838516
+export SOURCE_DATE_EPOCH=1552873494
 
 %install
-export SOURCE_DATE_EPOCH=1552838516
+export SOURCE_DATE_EPOCH=1552873494
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
