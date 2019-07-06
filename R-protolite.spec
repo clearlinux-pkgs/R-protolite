@@ -4,7 +4,7 @@
 #
 Name     : R-protolite
 Version  : 1.9
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/protolite_1.9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_1.9.tar.gz
 Summary  : Fast and Simple Object Serialization to Protocol Buffers
