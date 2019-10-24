@@ -2,3 +2,4 @@
 R-RProtoBuf
 R-sf
 pkgconfig(protobuf)
+util-linux

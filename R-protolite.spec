@@ -4,23 +4,22 @@
 #
 Name     : R-protolite
 Version  : 2.0
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/protolite_2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_2.0.tar.gz
 Summary  : Highly Optimized Protocol Buffer Serializers
 Group    : Development/Tools
 License  : MIT
 Requires: R-protolite-lib = %{version}-%{release}
-Requires: R-RProtoBuf
 Requires: R-Rcpp
 Requires: R-jsonlite
-Requires: R-sf
 BuildRequires : R-RProtoBuf
 BuildRequires : R-Rcpp
 BuildRequires : R-jsonlite
 BuildRequires : R-sf
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(protobuf)
+BuildRequires : util-linux
 
 %description
 formats based on Google protocol-buffers. Currently supports 'rexp.proto' for 
@@ -46,10 +45,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570784351
+export SOURCE_DATE_EPOCH=1571879237
 
 %install
-export SOURCE_DATE_EPOCH=1570784351
+export SOURCE_DATE_EPOCH=1571879237
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
