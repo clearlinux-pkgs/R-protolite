@@ -4,7 +4,7 @@
 #
 Name     : R-protolite
 Version  : 2.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/protolite_2.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_2.0.tar.gz
 Summary  : Highly Optimized Protocol Buffer Serializers
