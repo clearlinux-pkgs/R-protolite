@@ -4,21 +4,17 @@
 #
 Name     : R-protolite
 Version  : 2.1
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/protolite_2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_2.1.tar.gz
 Summary  : Highly Optimized Protocol Buffer Serializers
 Group    : Development/Tools
 License  : MIT
 Requires: R-protolite-lib = %{version}-%{release}
-Requires: R-RProtoBuf
 Requires: R-Rcpp
 Requires: R-jsonlite
-Requires: R-sf
-BuildRequires : R-RProtoBuf
 BuildRequires : R-Rcpp
 BuildRequires : R-jsonlite
-BuildRequires : R-sf
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(protobuf)
 
@@ -40,21 +36,22 @@ lib components for the R-protolite package.
 
 %prep
 %setup -q -c -n protolite
+cd %{_builddir}/protolite
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578946220
+export SOURCE_DATE_EPOCH=1589758577
 
 %install
-export SOURCE_DATE_EPOCH=1578946220
+export SOURCE_DATE_EPOCH=1589758577
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
