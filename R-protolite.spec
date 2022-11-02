@@ -4,7 +4,7 @@
 #
 Name     : R-protolite
 Version  : 2.1.3
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/protolite_2.1.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/protolite_2.1.3.tar.gz
 Summary  : Highly Optimized Protocol Buffer Serializers
